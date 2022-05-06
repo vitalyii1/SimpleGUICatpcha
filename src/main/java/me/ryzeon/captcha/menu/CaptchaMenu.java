@@ -35,7 +35,7 @@ public class CaptchaMenu implements Menu {
 
     public void update() {
         this.inventory.clear();
-        this.inventory.setItem(Utils.randomInteger(0, 26), new ItemBuilder(Material.STAINED_GLASS_PANE).setDurability(13).setName("&aClick here!").get());
+        this.inventory.setItem(Utils.randomInteger(0, 26), new ItemBuilder(Material.STAINED_GLASS_PANE).setDurability(13).setName("&aНажмите здесь!").get());
         InventoryUtil.fillInventory(this.inventory);
     }
 
@@ -68,7 +68,7 @@ public class CaptchaMenu implements Menu {
                 return;
             if (!e.getCurrentItem().hasItemMeta()) return;
 
-            if (e.getCurrentItem().equals(new ItemBuilder(Material.STAINED_GLASS_PANE).setDurability(13).setName("&aClick here!").get())) {
+            if (e.getCurrentItem().equals(new ItemBuilder(Material.STAINED_GLASS_PANE).setDurability(13).setName("&aНажмите здесь!").get())) {
                 PlayerListener.passedCaptcha.add(p.getUniqueId());
                 p.closeInventory();
             } else {
